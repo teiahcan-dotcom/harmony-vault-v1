@@ -77,6 +77,7 @@ newVision.className = "portal";
 newVision.innerHTML = `
 <h2>${visionText}</h2>
 <p>Your vision has been anchored into the Vault.</p>
+<button onclick="deleteVision(${savedVisions.indexOf(visionText)})">Remove</button>
 `;
 visionList.appendChild(newVision);
 });
@@ -94,8 +95,13 @@ localStorage.setItem("visions", JSON.stringify(savedVisions));
 input.value = "";
 showVisions();
 }
+function deleteVision(index) {
+savedVisions.splice(index, 1);
+localStorage.setItem("visions", JSON.stringify(savedVisions));
+showVisions();
+}
 
-showVision();
+showVisions();
 </script>
 </body>
 </html>
