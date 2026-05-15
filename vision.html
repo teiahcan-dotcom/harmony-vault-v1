@@ -65,29 +65,37 @@ This portal is for manifestation, future visions, dream building, goals, and tim
 
 <a href="index.html">← Back to Harmony Vault</a>
 <script>
-function addVision() {
+let savedVisions = JSON.parse(localStorage.getItem("visions")) || [];
 
-let input = document.getElementById("visionInput");
-
-let visionText = input.value;
-
-if (visionText.trim() === "") return;
-
+function showVisions() {
 let visionList = document.getElementById("visionList");
+visionList.innerHTML = "";
 
+savedVisions.forEach(function(visionText) {
 let newVision = document.createElement("div");
-
 newVision.className = "portal";
-
 newVision.innerHTML = `
 <h2>${visionText}</h2>
 <p>Your vision has been anchored into the Vault.</p>
 `;
-
 visionList.appendChild(newVision);
+});
+}
+
+function addVision() {
+let input = document.getElementById("visionInput");
+let visionText = input.value;
+
+if (visionText.trim() === "") return;
+
+savedVisions.push(visionText);
+localStorage.setItem("visions", JSON.stringify(savedVisions));
 
 input.value = "";
+showVisions();
 }
+
+showVision();
 </script>
 </body>
 </html>
