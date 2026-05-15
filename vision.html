@@ -55,11 +55,39 @@ This portal is for manifestation, future visions, dream building, goals, and tim
 </div>
 
 
-<input type="text" placeholder="What are you seeking today?">
-<button>Ask the Guide</button>
+<input type="text" id="visionInput" placeholder="Enter a new vision...">
+
+<button onclick="addVision()">Add Vision</button>
+
+<div id="visionList"></div>
+
 </div>
 
 <a href="index.html">← Back to Harmony Vault</a>
+<script>
+function addVision() {
 
+let input = document.getElementById("visionInput");
+
+let visionText = input.value;
+
+if (visionText.trim() === "") return;
+
+let visionList = document.getElementById("visionList");
+
+let newVision = document.createElement("div");
+
+newVision.className = "portal";
+
+newVision.innerHTML = `
+<h2>${visionText}</h2>
+<p>Your vision has been anchored into the Vault.</p>
+`;
+
+visionList.appendChild(newVision);
+
+input.value = "";
+}
+</script>
 </body>
 </html>
