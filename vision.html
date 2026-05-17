@@ -203,6 +203,9 @@ visionList.innerHTML = "";
 savedVisions.forEach(function(visionText) {
 let newVision = document.createElement("div");
 newVision.className = "portal";
+    newVision.oneclick = function() {
+        newVision.classList.toggle("active");
+    };
 newVision.innerHTML = `
 <h2>${visionText}</h2>
 <p>Your vision has been anchored into the Vault.</p>
