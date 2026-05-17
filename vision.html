@@ -10,12 +10,15 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 40px;
+    posiyion: relative;
 }
 a { color: #c7d2fe; text-decoration: none; }
 .box {
     margin: 40px auto;
     padding: 30px;
     max-width: 900px;
+    position: relative;
+    z-index: 1;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 20px;
@@ -47,6 +50,9 @@ box-shadow: 0 0 15px rgba(255,255,255,0.6);
 .portal {
     animation: fadeIn 1s ease, floatGlow 5s ease-in-out infinite;
     transition: 0.4s; 
+    
+    position: relative;
+    z-index: 1;
   
 }
 
@@ -63,13 +69,15 @@ box-shadow: 0 0 15px rgba(255,255,255,0.6);
     height: 100%;
     pointer-events: none;
     overflow: hidden;
+        z-index: 0;
 }
 
 .stars span {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    box-shadow: 0 0 10px white;
     border-radius: 50%;
     animation: twinkle 4s infinite ease-in-out;
 }
