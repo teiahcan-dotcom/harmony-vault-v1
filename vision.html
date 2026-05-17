@@ -206,6 +206,7 @@ newVision.className = "portal";
 newVision.innerHTML = `
 <h2>${visionText}</h2>
 <p>Your vision has been anchored into the Vault.</p>
+<p class="vision-detail">Click this vision to open its energy.</p>
 <button onclick="deleteVision(${savedVisions.indexOf(visionText)})">Remove</button>
 `;
 visionList.appendChild(newVision);
