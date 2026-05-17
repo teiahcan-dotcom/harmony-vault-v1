@@ -54,7 +54,40 @@ box-shadow: 0 0 15px rgba(255,255,255,0.6);
      transform: scale(1.02);
      box-shadow: 0 0 25px rgba(255,255,255,0.35);
  }
-   
+
+    .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.stars span {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
     @keyframes floatGlow {
     0% {
         transform: translateY(0px);
@@ -81,7 +114,15 @@ box-shadow: 0 0 15px rgba(255,255,255,0.6);
 </style>
 </head>
 <body>
-
+<div class="stars">
+<span style="top:10%; left:20%;"></span>
+<span style="top:30%; left:70%;"></span>
+<span style="top:50%; left:40%;"></span>
+<span style="top:80%; left:60%;"></span>
+<span style="top:20%; left:90%;"></span>
+<span style="top:65%; left:15%;"></span>
+<span style="top:75%; left:80%;"></span>
+</div>
 <h1>Vision Board</h1>
 
 <div class="box">
