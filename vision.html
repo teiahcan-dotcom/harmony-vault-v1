@@ -97,6 +97,11 @@ This portal is for manifestation, future visions, dream building, goals, and tim
 <a href="index.html">← Back to Harmony Vault</a>
 <script>
 let savedVisions = JSON.parse(localStorage.getItem("visions")) || [];
+    document.getElementById("visionInput").addEventListener("keypress", function(event) {
+if (event.key === "Enter") {
+addVision();
+}
+});
 let guideMessages = [
 "Stillness reveals what force cannot.",
 "The path becomes visible when you stop resisting it.",
