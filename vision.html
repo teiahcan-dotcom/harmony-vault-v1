@@ -82,6 +82,15 @@ This portal is for manifestation, future visions, dream building, goals, and tim
 <a href="index.html">← Back to Harmony Vault</a>
 <script>
 let savedVisions = JSON.parse(localStorage.getItem("visions")) || [];
+let guideMessages = [
+"Stillness reveals what force cannot.",
+"The path becomes visible when you stop resisting it.",
+"Your future responds to your frequency.",
+"Aligned action opens hidden doors.",
+"What you seek is also seeking you.",
+"The soul remembers before the mind understands.",
+"Creation begins the moment you believe it is possible."
+];
 
 function showVisions() {
 let visionList = document.getElementById("visionList");
@@ -107,6 +116,14 @@ if (visionText.trim() === "") return;
 
 savedVisions.push(visionText);
 localStorage.setItem("visions", JSON.stringify(savedVisions));
+ let randomMessage = guideMessages[Math.floor(Math.random() * guideMessages.length)];
+
+document.getElementById("guideResponse").innerHTML = `
+<div class="portal">
+<h3>Vault Guide Message</h3>
+<p>${randomMessage}</p>
+</div>
+`;
 
 input.value = "";
 showVisions();
