@@ -45,9 +45,27 @@ transform: scale(1.05);
 box-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
 .portal {
-    animation: fadeIn 1s ease;
+    animation: fadeIn 1s ease, floatGlow 5s ease-in-out infinite;
+    transition: 0.4s; 
+  
 }
 
+ .portal:hover{
+     transform: scale(1.02);
+     box-shadow: 0 0 25px rgba(255,255,255,0.35);
+ }
+   
+    @keyframes floatGlow {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
